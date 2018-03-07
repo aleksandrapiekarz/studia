@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\wolf\Wolf.cs">
+    <Files>
+      <File FileName="Assets\scripts\player\MainPlayer.cs" Line="10" Column="15" />
+      <File FileName="Assets\scripts\player\Player.cs" Line="12" Column="3" />
+      <File FileName="Assets\scripts\rabbit\MainRabbit.cs" Line="10" Column="27" />
+      <File FileName="Assets\scripts\rabbit\Rabbit.cs" Line="7" Column="48" />
+      <File FileName="Assets\scripts\wolf\MainWolf.cs" Line="10" Column="27" />
+      <File FileName="Assets\scripts\wolf\Wolf.cs" Line="15" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
