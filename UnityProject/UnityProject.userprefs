@@ -1,6 +1,6 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\background\background.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\buttonsEvents\newGame.cs">
     <Files>
       <File FileName="Assets\scripts\player\MainPlayer.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\player\Player.cs" Line="1" Column="1" />
@@ -8,7 +8,9 @@
       <File FileName="Assets\scripts\rabbit\Rabbit.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\wolf\MainWolf.cs" Line="1" Column="1" />
       <File FileName="Assets\scripts\wolf\Wolf.cs" Line="1" Column="1" />
-      <File FileName="Assets\scripts\background\background.cs" Line="12" Column="32" />
+      <File FileName="Assets\scripts\background\background.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\buttonsEvents\newGame.cs" Line="13" Column="6" />
+      <File FileName="Assets\scripts\buttonsEvents\doExit.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
