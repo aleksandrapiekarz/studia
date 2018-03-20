@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 716090b389f7569488601a2862e587a1
-timeCreated: 1521554610
+guid: d1bae5935c831964fba3df2d9c5f3d5c
+timeCreated: 1521565335
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: stand_down_0
-    21300002: stand_down_1
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -48,7 +46,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 50
+  spritePixelsToUnits: 48
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -80,34 +78,8 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: stand_down_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 65
-        height: 64
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    outline:
-    - - {x: -13, y: 32}
-      - {x: -14, y: 31}
-      - {x: -16, y: 15}
-      - {x: -16, y: -30}
-      - {x: -15, y: -32}
-      - {x: 15, y: -32}
-      - {x: 15, y: 19}
-      - {x: 13, y: 32}
-    - - {x: -2.845768, y: 9.641571}
-      - {x: -2.845768, y: 11.10223}
-      - {x: 4.61129, y: 11.10223}
-      - {x: 4.61129, y: 9.641571}
+    sprites: []
+    outline: []
     physicsShape: []
   spritePackingTag: 
   userData: 
