@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\loadBtn.cs" />
      <Compile Include="Assets\scripts\background\followBackground.cs" />
      <Compile Include="Assets\scripts\background\SimplyPlayerBehaviour.cs" />
      <Compile Include="Assets\scripts\buttonsEvents\doExit.cs" />

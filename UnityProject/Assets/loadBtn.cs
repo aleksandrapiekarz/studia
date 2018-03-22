@@ -4,15 +4,16 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class doExit : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
+public class loadBtn : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+{
 
 
     public Text theText;
-	// Use this for initialization
-	public void doQuit(){
-		Debug.Log("has quit game");
-		Application.Quit ();
-	}
+    // Use this for initialization
+    public void doQuit()
+    {
+        
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
