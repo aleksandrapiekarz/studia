@@ -17,7 +17,7 @@ public class loadBtn : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        theText.color = Color.red;
+        theText.color = Color.black;
     }
 
     public void OnPointerExit(PointerEventData eventData)
