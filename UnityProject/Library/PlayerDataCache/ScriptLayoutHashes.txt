@@ -145,6 +145,8 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.followBackground
+2e7ac30da6be2b7920d30146895a0b9b Assembly-CSharp.dll:.treesSpawn
 e84b0c18b10fcd1b346729f94c78c07e Assembly-CSharp.dll:.loadBtn
 e84b0c18b10fcd1b346729f94c78c07e Assembly-CSharp.dll:.newGame
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.SimplyPlayerBehaviour
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.treeSpawn
