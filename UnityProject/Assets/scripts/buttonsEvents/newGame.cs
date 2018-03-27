@@ -13,7 +13,6 @@ public class newGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void doNewGame()
     {
 		SceneManager.LoadScene("mainScene");
-
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -24,6 +23,5 @@ public class newGame : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerExit(PointerEventData eventData)
     {
         theText.color = Color.white;
-
     }
 }

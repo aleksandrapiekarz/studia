@@ -8,15 +8,17 @@ using UnityEngine.SceneManagement;
 public class loadBtn : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Text theText;
-    
+
+	public float pX, pY;
+
     public void doLoad()
 	{
-		float pX = PlayerPrefs.GetFloat ("PlayerX");
-		float pY = PlayerPrefs.GetFloat ("PlayerY");
-		transform.position = new Vector2 (pX, pY);
-
 		Random.seed = PlayerPrefs.GetInt ("Random");
-		MapGenerate _Map = new MapGenerate();
+		//MapGenerate _Map = new MapGenerate();
+
+		pX = PlayerPrefs.GetFloat ("PlayerX");
+		pY = PlayerPrefs.GetFloat ("PlayerY");
+		transform.position = new Vector2 (pX, pY);
 
 		SceneManager.LoadScene("mainScene");
     }

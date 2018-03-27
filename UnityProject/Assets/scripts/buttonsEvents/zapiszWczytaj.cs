@@ -7,7 +7,6 @@ public class zapiszWczytaj : MonoBehaviour {
 
 		PlayerPrefs.SetFloat ("PlayerX", transform.position.x);
 		PlayerPrefs.SetFloat ("PlayerY", transform.position.y);
-
 		PlayerPrefs.SetInt ("Random", Random.seed);
 	}
 		
@@ -15,11 +14,9 @@ public class zapiszWczytaj : MonoBehaviour {
 
 		float pX = PlayerPrefs.GetFloat ("PlayerX");
 		float pY = PlayerPrefs.GetFloat ("PlayerY");
-
 		transform.position = new Vector2 (pX, pY);
 
 		Random.seed = PlayerPrefs.GetInt ("Random");
-
-		MapGenerate _Map = new MapGenerate();
+		//MapGenerate _Map = new MapGenerate();
 	}
 }
