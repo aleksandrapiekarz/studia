@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
 	private MainPlayer _Player = new MainPlayer();
 	private Animator animator;
 	protected Vector2 direction;
+
+
 	float speed = 5f;
 
 	void Start () {
