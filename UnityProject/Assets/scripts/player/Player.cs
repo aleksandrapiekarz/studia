@@ -42,7 +42,7 @@ public class Player : MonoBehaviour {
 
 	public void Move() {
 		
-		transform.Translate (direction * speed * Time.deltaTime);
+		transform.Translate (direction * speed * Time.deltaTime/3);
 
 		if (direction.x != 0 || direction.y != 0) {
 
