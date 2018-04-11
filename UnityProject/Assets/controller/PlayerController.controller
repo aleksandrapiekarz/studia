@@ -1886,7 +1886,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: stand_Left
-  m_Speed: 0.3
+  m_Speed: 0.08
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101759027302986864}
@@ -1914,7 +1914,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: stand_Down
-  m_Speed: 0.3
+  m_Speed: 0.08
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101696880690865788}
@@ -1970,7 +1970,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: walk_Up
-  m_Speed: 0.3
+  m_Speed: 0.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101189086788522750}
@@ -1998,7 +1998,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: stand_Right
-  m_Speed: 0.3
+  m_Speed: 0.08
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101195123056258276}
@@ -2054,7 +2054,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: walk_Left
-  m_Speed: 0.6
+  m_Speed: 0.3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101887785453664448}
@@ -2082,7 +2082,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: walk_Down
-  m_Speed: 0.3
+  m_Speed: 0.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101057476176655086}
@@ -2166,7 +2166,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: stand_Up
-  m_Speed: 0.3
+  m_Speed: 0.08
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101994504127078460}
@@ -2250,7 +2250,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: walk_Right
-  m_Speed: 0.6
+  m_Speed: 0.3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101383339295189100}
