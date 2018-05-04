@@ -48,7 +48,7 @@ public class EnemyAI : Character {
             animator.SetFloat("x", direction.x);
             animator.SetFloat("y", direction.y);
             direction = (target.transform.position - transform.position).normalized;
-            transform.position = Vector2.MoveTowards(transform.position, target.position, 1 * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.position, 2 * Time.deltaTime);
 
         }
         else
