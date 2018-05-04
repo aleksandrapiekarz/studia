@@ -132,6 +132,5 @@ C:\Users\Przemek\Desktop\Github\UnityProjekt\UnityProject\Temp\bin\Debug\UnityEn
 C:\Users\Przemek\Desktop\Github\UnityProjekt\UnityProject\Temp\bin\Debug\UnityEditor.VR.xml
 C:\Users\Przemek\Desktop\Github\UnityProjekt\UnityProject\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.xml
 C:\Users\Przemek\Desktop\Github\UnityProjekt\UnityProject\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
-C:\Users\Przemek\Desktop\Github\UnityProjekt\UnityProject\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Users\Przemek\Desktop\Github\UnityProjekt\UnityProject\obj\Debug\Assembly-CSharp.dll
 C:\Users\Przemek\Desktop\Github\UnityProjekt\UnityProject\obj\Debug\Assembly-CSharp.pdb
