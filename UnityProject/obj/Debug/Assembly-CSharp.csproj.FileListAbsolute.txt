@@ -134,3 +134,4 @@ C:\Users\Przemek\Desktop\Github\UnityProjekt\UnityProject\Temp\bin\Debug\UnityEd
 C:\Users\Przemek\Desktop\Github\UnityProjekt\UnityProject\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Przemek\Desktop\Github\UnityProjekt\UnityProject\obj\Debug\Assembly-CSharp.dll
 C:\Users\Przemek\Desktop\Github\UnityProjekt\UnityProject\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Przemek\Desktop\Github\UnityProjekt\UnityProject\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache

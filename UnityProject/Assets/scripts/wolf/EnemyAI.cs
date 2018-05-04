@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyAI : Player {
+public class EnemyAI : Character {
 	private Transform target;
 	public int moveSpeed;
 	public int rotationSpeed;
 
-	public Transform Target
+
+    public Transform Target
 	{
 		get{
 			return target;
@@ -26,8 +27,8 @@ public class EnemyAI : Player {
 
 
 	void Start () {
-		
-	}
+      
+    }
 
 	// Update is called once per frame
 	void Update () { 
@@ -39,12 +40,20 @@ public class EnemyAI : Player {
 
 	private void FollowTarget()
 	{
-		if (target != null) {
 
-			transform.position=Vector2.MoveTowards(transform.position, target.position, 1*Time.deltaTime);
+        Animator  animator = GetComponent<Animator>();
+        if (target != null)
+        {
 
-		}
+            animator.SetFloat("x", direction.x);
+            animator.SetFloat("y", direction.y);
+            direction = (target.transform.position - transform.position).normalized;
+            transform.position = Vector2.MoveTowards(transform.position, target.position, 1 * Time.deltaTime);
 
+        }
+        else
+
+            direction = Vector2.zero;
 
 	
 
