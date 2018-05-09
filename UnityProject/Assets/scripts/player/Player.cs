@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-	private MainPlayer _Player = new MainPlayer();
-	private Animator animator;
-	protected Vector2 direction;
-
-
+	MainPlayer _Player = new MainPlayer();
+	Animator animator;
+	Vector2 direction;
 	float speed = 5f;
 
 	void Start () {
@@ -17,13 +15,13 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update () {
-		
+
 		Move ();
 		GetInput ();
 	}
 
 	private void GetInput() {
-
+		
 		direction = Vector2.zero;
 
 		if (Input.GetKey (KeyCode.W)) {
@@ -41,8 +39,8 @@ public class Player : MonoBehaviour {
 	}
 
 	public void Move() {
-		
-		transform.Translate (direction * speed * Time.deltaTime/3);
+
+		transform.Translate (direction * speed * Time.deltaTime / 3);
 
 		if (direction.x != 0 || direction.y != 0) {
 

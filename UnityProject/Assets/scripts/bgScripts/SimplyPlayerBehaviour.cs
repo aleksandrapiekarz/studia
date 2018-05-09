@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SimplyPlayerBehaviour : MonoBehaviour {
 
-	float speed=5f;
+	float speed=1f;
 
 	
 	// Update is called once per frame
