@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Configuration [
+<!ELEMENT Configuration (SynchronizationAgent, ExchangeServer, DataSetsConfiguration*)>
+
+<!ELEMENT SynchronizationAgent (TempDataLocation)>
+<!ATTLIST SynchronizationAgent 
+server CDATA #REQUIRED
+server_agent_nr CDATA #REQUIRED>
+
+<!ELEMENT TempDataLocation (#PCDATA)>
+<!ATTLIST TempDataLocation
+type CDATA #REQUIRED
+dbtype CDATA #REQUIRED
+Server CDATA #REQUIRED
+Database CDATA #REQUIRED
+UserId CDATA #REQUIRED
+Password CDATA #REQUIRED>
+
+<!ELEMENT ExchangeServer (#PCDATA)>
+<!ATTLIST ExchangeServer 
+URL CDATA #REQUIRED
+login CDATA #REQUIRED
+pass CDATA #REQUIRED
+RootCatalog CDATA #REQUIRED>
+
+<!ELEMENT DataSetsConfiguration (DataSetConfiguration)*>
+<!ATTLIST DataSetsConfiguration
+retrieveDataTriesNumber CDATA #REQUIRED
+mode CDATA #REQUIRED>
+
+<!ELEMENT DataSetConfiguration (Schedule, DataArea*)>
+<!ATTLIST DataSetConfiguration 
+ID CDATA #REQUIRED>
+
+<!ELEMENT Schedule (#PCDATA)>
+<!ATTLIST Schedule
+type CDATA #REQUIRED
+evry CDATA #REQUIRED>
+
+<!ELEMENT DataArea (DataLocation, Actions, DataDefinition*)>
+<!ATTLIST DataArea
+ID CDATA #REQUIRED
+type CDATA #REQUIRED>
+
+<!ELEMENT DataLocation (#PCDATA)>
+<!ATTLIST DataLocation
+type CDATA #REQUIRED
+dbtype CDATA #REQUIRED
+Server CDATA #REQUIRED
+Database CDATA #REQUIRED
+UserId CDATA #REQUIRED
+Password CDATA #REQUIRED>
+
+<!ELEMENT Actions (Before, After)*>
+<!ELEMENT Before (#PCDATA)>
+<!ATTLIST Before
+type CDATA #REQUIRED
+sql_type CDATA #REQUIRED
+expression CDATA #REQUIRED
+createLog CDATA #REQUIRED
+job_name CDATA #REQUIRED>
+<!ELEMENT After (PCDATA)>
+<!ATTLIST After
+FireWhen CDATA #REQUIRED
+type CDATA #REQUIRED
+sql_type CDATA #REQUIRED
+expression CDATA #REQUIRED
+createLog CDATA #REQUIRED
+job_name CDATA #REQUIRED>
+
+<!ELEMENT DataDefinition (Query, Mapping)>
+<!ELEMENT Query (#PCDATA)>
+<!ATTLIST Query
+sql CDATA #REQUIRED
+sql_type CDATA #REQUIRED>
+<!ELEMENT Mapping (Field)>
+<!ELEMENT Field (#PCDATA)>
+<ATTLIST Field
+source CDATA #REQUIRED
+destination CDATA #REQUIRED>
+]>
+
+<Configuration><!-- Root DOM element -->
+  <SynchronizationAgent server="LinuxServer" server_agent_nr="2">
+  <TempDataLocation type="db" dbtype="pymssql" Server="127.168.4.5" Database="Hell" UserId="Data" Password="SuperT4jneH4suo"/>
+  </SynchronizationAgent>
+  <ExchangeServer URL="1.2.3.4" login="d.giebas" pass="12346" RootCatalog="DD"/>
+  <DataSetsConfiguration mode="PUSH">
+    <DataSetConfiguration ID="users_and_passwords_server">
+      <Schedule type="minutes" every="3"/>
+      <DataArea ID="users" type="table">
+        <DataLocation type="db" dbtype="psycopg2" Server="127.0.0.1" Database="dsServerDB" UserId="damian" Password="SuperT4jneH4suo"/>
+        <Actions>
+          <Before type="sql" sql_type="procedure" expression="SELECT createLog('DamianServer DataArea users Before.');"  job_name="Log before action on dataArea users."/>
+          <After FireWhen="success" type="sql" sql_type="procedure" expression="SELECT createLog('DamianServer DataArea users After.');"  job_name="Log before action on dataArea users."/>
+        </Actions>
+              <DataDefinition>
+                <Query sql="SELECT username, password, name FROM users;" sql_type="select"/>
+                <Mapping>
+                  <Field source="username" destination="user"/>
+                  <Field source="password" destination="pass"/>
+                  <Field source="name" destination="name"/>
+                </Mapping>
+              </DataDefinition>
+      </DataArea>
+
+      <DataArea ID="oldpasswords" type="table">
+        <DataLocation type="db" dbtype="psycopg2" Server="127.0.0.1" Database="dsServerDB" UserId="damian" Password="SuperT4jneH4suo"/>
+        <Actions>
+          <Before type="sql" sql_type="procedure" expression="SELECT createLog('DamianServer DataArea oldpasswords Before.');" job_name="Log before action on dataArea oldpasswords."/>
+          <After FireWhen="success" type="sql" sql_type="procedure" expression="SELECT createLog('DamianServer DataArea oldpasswords After.');" job_name="Log after action on dataArea oldpasswords."/>
+        </Actions>
+              <DataDefinition>
+                <Query sql="SELECT users_id, password FROM oldpasswords;" sql_type="select"/>
+                <Mapping>
+                  <Field source="users_id" destination="user"/>
+                  <Field source="password" destination="oldpass"/>
+                </Mapping>
+              </DataDefinition>
+      </DataArea>
+    </DataSetConfiguration>
+
+    <DataSetConfiguration ID="users_and_passwords_server2">
+      <Schedule type="hour" time=":03"/>
+      <DataArea ID="users" type="table">
+        <DataLocation type="db" dbtype="pymssql" Server="127.0.0.1" Database="dsServerDB" UserId="damian" Password="genesis1"/>
+        <Actions>
+          <Before type="sql" sql_type="procedure" expression="SELECT createLog('DamianServer DataArea users Before.');"  job_name="Log before action on dataArea users."/>
+          <After FireWhen="success" type="sql" sql_type="procedure" expression="SELECT createLog('DamianServer DataArea users After.');"  job_name="Log before action on dataArea users."/>
+        </Actions>
+              <DataDefinition>
+                <Query sql="SELECT username, password, name FROM users;" sql_type="select"/>
+                <Mapping>
+                  <Field source="username" destination="user"/>
+                  <Field source="password" destination="pass"/>
+                  <Field source="name" destination="name"/>
+                </Mapping>
+              </DataDefinition>
+      </DataArea>
+
+      <DataArea ID="oldpasswords" type="table">
+        <DataLocation type="db" dbtype="psycopg2" Server="127.0.0.1" Database="dsServerDB" UserId="damian" Password="SuperT4jneH4suo"/>
+        <Actions>
+          <Before type="sql" sql_type="procedure" expression="SELECT createLog('DamianServer DataArea oldpasswords Before.');" job_name="Log before action on dataArea oldpasswords."/>
+          <After FireWhen="success" type="sql" sql_type="procedure" expression="SELECT createLog('DamianServer DataArea oldpasswords After.');" job_name="Log after action on dataArea oldpasswords."/>
+        </Actions>
+              <DataDefinition>
+                <Query sql="SELECT users_id, password FROM oldpasswords;" sql_type="select"/>
+                <Mapping>
+                  <Field source="users_id" destination="user"/>
+                  <Field source="password" destination="oldpass"/>
+                </Mapping>
+              </DataDefinition>
+      </DataArea>
+    </DataSetConfiguration>
+
+    <DataSetConfiguration ID="users_and_passwords_server3">
+      <Schedule type="weeks" every="2" time="19:00"/>
+      <DataArea ID="users" type="table">
+        <DataLocation type="db" dbtype="pymssql" Server="127.0.0.1" Database="dsServerDB" UserId="damian" Password="SuperT4jneH4suo"/>
+        <Actions>
+          <Before type="sql" sql_type="procedure" expression="SELECT createLog('DamianServer DataArea users Before.');"  job_name="Log before action on dataArea users."/>
+          <After FireWhen="success" type="sql" sql_type="procedure" expression="SELECT createLog('DamianServer DataArea users After.');"  job_name="Log before action on dataArea users."/>
+        </Actions>
+              <DataDefinition>
+                <Query sql="SELECT username, password, name FROM users;" sql_type="select"/>
+                <Mapping>
+                  <Field source="username" destination="user"/>
+                  <Field source="password" destination="pass"/>
+                  <Field source="name" destination="name"/>
+                </Mapping>
+              </DataDefinition>
+      </DataArea>
+
+      <DataArea ID="oldpasswords" type="table">
+        <DataLocation type="db" dbtype="psycopg2" Server="127.0.0.1" Database="dsServerDB" UserId="damian" Password="SuperT4jneH4suo"/>
+        <Actions>
+          <Before type="sql" sql_type="procedure" expression="SELECT createLog('DamianServer DataArea oldpasswords Before.');" job_name="Log before action on dataArea oldpasswords."/>
+          <After FireWhen="success" type="sql" sql_type="procedure" expression="SELECT createLog('DamianServer DataArea oldpasswords After.');" job_name="Log after action on dataArea oldpasswords."/>
+        </Actions>
+              <DataDefinition>
+                <Query sql="SELECT users_id, password FROM oldpasswords;" sql_type="select"/>
+                <Mapping>
+                  <Field source="users_id" destination="user"/>
+                  <Field source="password" destination="oldpass"/>
+                </Mapping>
+              </DataDefinition>
+      </DataArea>
+    </DataSetConfiguration>
+  </DataSetsConfiguration>
+
+  <DataSetsConfiguration retrieveDataTriesNumber="5" mode="PULL">
+    <DataSetConfiguration ID="users_and_passwords_server">
+      <Schedule type="day" time="16:56"/>
+      <DataArea ID="users" type="table">
+        <DataLocation type="db" dbtype="psycopg2" Server="127.0.0.1" Database="dsClientDB" UserId="damian" Password="SuperT4jneH4suo"/>
+        <Actions>
+          <Before type="sql" sql_type="delete" expression="DELETE FROM uzytkownicy;" job_name="Remove old users"/>
+          <Before type="sql" sql_type="procedure" expression="SELECT createLog('DamianClient DataArea users Before.');"  job_name="Log before action on dataArea users."/>
+          <After FireWhen="success" type="sql" sql_type="select" expression="SELECT* FROM RANDM_TBL;"  job_name="Log after success action on dataArea users."/>
+          <After FireWhen="always" type="sql" sql_type="update" expression="UPDATE data WHERE ID=1;');"  job_name="Log after always action on dataArea users."/>
+          <After FireWhen="failure" type="sql" sql_type="insert" expression="INSERT INTO data (1,2,3,4)');"  job_name="Log after always action on dataArea users."/>
+        </Actions>
+        <DataDefinition>
+          <Query sql="INSERT INTO uzytkownicy(login, haslo, imie_i_nazwisko, synchronizationid) VALUES(%(login)s, %(haslo)s, %(imie_i_nazwisko)s, %(synchronizationID)s);" sql_type="insert"/>
+          <Mapping>
+            <Field source="user" destination="login"/>
+            <Field source="pass" destination="haslo"/>
+            <Field source="name" destination="imie_i_nazwisko"/>
+          </Mapping>
+        </DataDefinition>
+      </DataArea>
+
+      <DataArea ID="oldpasswords" type="table">
+        <DataLocation type="db" dbtype="pymssql" Server="127.0.0.1" Database="dsClientDB" UserId="damian" Password="SuperT4jneH4suo"/>
+        <Actions>
+          <Before type="sql" sql_type="delete" expression="DELETE FROM starehasla;" job_name="Remove old password"/>
+          <Before type="sql" sql_type="procedure" expression="SELECT createLog('DamianClient DataArea oldpasswords Before.');" job_name="Log before action on dataArea oldpasswords."/>
+          <After FireWhen="success" type="sql" sql_type="procedure" expression="SELECT createLog('DamianClient DataArea oldpasswords After success.');" job_name="Log after succes action on dataArea oldpasswords."/>
+          <After FireWhen="always" type="sql" sql_type="procedure" expression="SELECT createLog('DamianClient DataArea oldpasswords After always.');" job_name="Log after always action on dataArea oldpasswords."/>
+          <After FireWhen="failure" type="sql" sql_type="procedure" expression="SELECT createLog('DamianClient DataArea oldpasswords After failure.');" job_name="Log after failure action on dataArea oldpasswords."/>
+          <After FireWhen="failure" type="sql" sql_type="delete" expression="DELETE FROM starehasla WHERE synchronizationid = %(synchronizationID)s"  job_name="DELETE oldpasswords from broken synchronization."/>
+        </Actions>
+        <DataDefinition>
+          <Query sql="INSERT INTO starehasla(haslo, uzytkownicy_id, synchronizationid) VALUES(%(haslo)s, %(uzytkownicy_id)s, %(synchronizationID)s);" sql_type="insert"/>
+          <Mapping>
+            <Field source="user" destination="uzytkownicy_id"/>
+            <Field source="oldpass" destination="haslo"/>
+          </Mapping>
+        </DataDefinition>
+      </DataArea>
+    </DataSetConfiguration>
+    <DataSetConfiguration ID="users_and_passwords_ms">
+      <Schedule type="days" every="2" time="16:25" />
+      <!--<Schedule type="minutes" every="3" />-->
+      <!--<Schedule type="minute" />-->
+      <DataArea ID="users" type="table">
+        <DataLocation type="db" dbtype="pymssql" Server="127.0.0.1" Database="dsClientDB" UserId="damian" Password="SuperT4jneH4suo"/>
+        <Actions>
+          <Before type="sql" sql_type="delete" expression="DELETE FROM starehasla;" job_name="Delete all old passwords"/>
+          <Before type="sql" sql_type="delete" expression="DELETE FROM uzytkownicy;" job_name="Delete all users"/>
+        </Actions>
+        <DataDefinition>
+          <Query sql="SET IDENTITY_INSERT uzytkownicy ON; INSERT INTO uzytkownicy (id, uzytkownik, haslo, nazwa, synchronizationID) VALUES(%(id)s, %(uzytkownik)s, %(haslo)s, %(nazwa)s, %(synchronizationID)s)" sql_type="insert"/>
+          <Mapping>
+            <Field source="id" destination="id"/>
+            <Field source="user" destination="uzytkownik"/>
+            <Field source="pass" destination="haslo"/>
+            <Field source="name" destination="nazwa"/>
+          </Mapping>
+        </DataDefinition>
+      </DataArea>
+      
+      <DataArea ID="oldpasswords" type="table">
+        <DataLocation type="db" dbtype="pymssql" Server="127.0.0.1" Database="dsClientDB" UserId="damian" Password="SuperT4jneH4suo"/>
+        <DataDefinition>
+          <Query sql="INSERT INTO starehasla (haslo, uzytkownik_id, synchronizationID) VALUES(%(haslo)s, %(uzytkownik_id)s, %(synchronizationID)s)" sql_type="insert"/>
+          <Mapping>
+            <Field source="oldpass" destination="haslo"/>
+            <Field source="user" destination="uzytkownik_id"/>
+          </Mapping>
+        </DataDefinition>
+      </DataArea>
+      
+      <DataArea ID="all_files" FileExistAction="ignore" type="files">
+        <DataLocation type="folder" path="C:\Users\Administrator\Desktop\DataSynchronizator\All_Files"/>
+        <DataDefinition>
+        </DataDefinition>
+      </DataArea>
+      
+      <DataArea ID="files_from_patters" FileExistAction="replace" type="files">
+        <DataLocation type="folder" path="C:\Users\Administrator\Desktop\DataSynchronizator\Files_From_Patters"/>
+        <DataDefinition>
+        </DataDefinition>
+      </DataArea>
+      
+      <DataArea ID="files_from_patters_without_replace" type="files">
+        <DataLocation type="folder" path="C:\Users\Administrator\Desktop\DataSynchronizator\Files_From_Patters_NotReplacing"/>
+        <DataDefinition>
+        <Filter extension="JPEG" fileNamePattern="[a-zA-Z0-9]*Photo"/>
+        </DataDefinition>
+      </DataArea>
+    </DataSetConfiguration>
+  </DataSetsConfiguration>
+</Configuration>
